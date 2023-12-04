@@ -25,6 +25,7 @@ dependencies:
   # Icons
   iconsax: ^0.0.8
   get: ^4.6.6
+  flutter_native_splash: ^2.3.6
 
 #----------------PACKAGES END---------------------#
 dev_dependencies:
