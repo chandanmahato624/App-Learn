@@ -26,6 +26,7 @@ dependencies:
   iconsax: ^0.0.8
   get: ^4.6.6
   flutter_native_splash: ^2.3.6
+  smooth_page_indicator: ^1.1.0
 
 #----------------PACKAGES END---------------------#
 dev_dependencies:
@@ -44,7 +45,7 @@ flutter:
   assets:
     - assets/logos/
     - assets/icons/
-    - assets/images/
+    - assets/images/on_boarding_images/
 
  #----------------LOCAL ASSETS---------------------#
   fonts:
