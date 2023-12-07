@@ -9,8 +9,8 @@ class TImages {
       "assets/logos/t-store-splash-logo-white.png";
 
   // -- Social Logos
-  static const String google = "assets/logos/day.png";
-  static const String facebook = "assets/logos/night.png";
+  static const String google = "assets/logos/google-icon.png";
+  static const String facebook = "assets/logos/facebook-icon.png";
 
   // -- Category Icons
   static const String sportIcon =
