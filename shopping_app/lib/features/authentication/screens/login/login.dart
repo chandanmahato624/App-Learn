@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image(
-                    height: 150,
+                    height: 120,
                     image: AssetImage(
                         dark ? TImages.lightAppLogo : TImages.darkAppLogo),
                   ),
