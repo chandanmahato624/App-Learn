@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/styles/spacing_styles.dart';
+import 'package:shopping_app/common/widgets_login_signup/form_divider.dart';
+import 'package:shopping_app/common/widgets_login_signup/social_buttons.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -96,62 +98,11 @@ class LoginScreen extends StatelessWidget {
               ),
 
               /// Divider
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Divider(
-                        color: dark ? TColors.darkGrey : TColors.grey,
-                        thickness: 0.5,
-                        indent: 60,
-                        endIndent: 5),
-                  ),
-                  Text(TTexts.orSignInWith.capitalize!,
-                      style: Theme.of(context).textTheme.labelMedium),
-                  Flexible(
-                    child: Divider(
-                        color: dark ? TColors.darkGrey : TColors.grey,
-                        thickness: 0.5,
-                        indent: 5,
-                        endIndent: 60),
-                  ),
-                ],
-              ),
+              TFormDivider(dividerText: TTexts.orSignInWith.capitalize!),
               const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Footer
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(color: TColors.grey),
-                        borderRadius: BorderRadius.circular(100)),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Image(
-                        width: TSizes.iconMd,
-                        height: TSizes.iconMd,
-                        image: AssetImage(TImages.google),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: TSizes.spaceBtwItems),
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(color: TColors.grey),
-                        borderRadius: BorderRadius.circular(100)),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Image(
-                        width: TSizes.iconMd,
-                        height: TSizes.iconMd,
-                        image: AssetImage(TImages.facebook),
-                      ),
-                    ),
-                  ),
-                ],
-              )
+              const TSocialButtons()
             ],
           ),
         ),
