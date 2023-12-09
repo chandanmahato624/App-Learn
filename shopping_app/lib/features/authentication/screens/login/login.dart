@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/styles/spacing_styles.dart';
 import 'package:shopping_app/common/widgets_login_signup/form_divider.dart';
 import 'package:shopping_app/common/widgets_login_signup/social_buttons.dart';
+import 'package:shopping_app/features/authentication/screens/signup.widgets/signup.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -89,7 +90,8 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                           width: double.infinity,
                           child: OutlinedButton(
-                              onPressed: () {},
+                              onPressed: () =>
+                                  Get.to(() => const SignupScreen()),
                               child: const Text(TTexts.createAccount))),
                       const SizedBox(height: TSizes.spaceBtwInputFields),
                     ],
