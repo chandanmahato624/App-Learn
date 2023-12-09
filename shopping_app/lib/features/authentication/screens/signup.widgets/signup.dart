@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets_login_signup/form_divider.dart';
 import 'package:shopping_app/common/widgets_login_signup/social_buttons.dart';
 import 'package:shopping_app/features/authentication/screens/signup.widgets/widget/signup_from.dart';
-import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';
-import 'package:shopping_app/utils/helpers/helper_functions.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
