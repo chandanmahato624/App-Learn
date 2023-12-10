@@ -4,7 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/styles/spacing_styles.dart';
 import 'package:shopping_app/common/widgets_login_signup/form_divider.dart';
 import 'package:shopping_app/common/widgets_login_signup/social_buttons.dart';
-import 'package:shopping_app/features/authentication/screens/signup.widgets/signup.dart';
+import 'package:shopping_app/features/authentication/screens/signup/signup.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';

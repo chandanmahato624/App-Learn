@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:shopping_app/common/widgets_login_signup/form_divider.dart';
 import 'package:shopping_app/common/widgets_login_signup/social_buttons.dart';
-import 'package:shopping_app/features/authentication/screens/signup.widgets/widget/signup_from.dart';
+import 'package:shopping_app/features/authentication/screens/signup/widget/signup_from.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';
 
