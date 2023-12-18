@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:shopping_app/common/styles/spacing_styles.dart';
+import 'package:shopping_app/features/authentication/screens/login/login.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';
@@ -16,7 +19,7 @@ class SuccessScreen extends StatelessWidget {
           padding: TSpacingStyle.paddingWithAppBerHeight * 2,
           child: Column(children: [
             Image(
-              image: const AssetImage(TImages.deliveredEmailIllustration),
+              image: const AssetImage(TImages.staticSuccessIllustration),
               width: THelperFunctions.screenWidth() * 0.6,
             ),
             const SizedBox(
@@ -47,7 +50,7 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const LoginScreen()),
                 child: const Text(TTexts.tContinue),
               ),
             ),
