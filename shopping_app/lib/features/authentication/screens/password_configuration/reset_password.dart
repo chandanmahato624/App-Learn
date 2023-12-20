@@ -52,6 +52,14 @@ class ResetPassword extends StatelessWidget {
                   child: const Text(TTexts.done),
                 ),
               ),
+              const SizedBox(height: TSizes.spaceBtwItems),
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(TTexts.resendEmail),
+                ),
+              ),
             ],
           ),
         ),

@@ -21,15 +21,13 @@ class ForgetPassword extends StatelessWidget {
             Text(
               TTexts.forgetPasswordTitle,
               style: Theme.of(context).textTheme.headlineMedium,
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
             Text(
               TTexts.forgetPasswordSubTitle,
               style: Theme.of(context).textTheme.labelMedium,
-              textAlign: TextAlign.center,
             ),
-            const SizedBox(height: TSizes.spaceBtwSections * 2),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             ///Text fild
             TextFormField(
@@ -37,6 +35,7 @@ class ForgetPassword extends StatelessWidget {
                   labelText: TTexts.email,
                   prefixIcon: Icon(Iconsax.direct_right)),
             ),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             ///Submit Button
             SizedBox(
