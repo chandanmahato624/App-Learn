@@ -6,6 +6,7 @@ import 'package:shopping_app/common/widgets_login_signup/form_divider.dart';
 import 'package:shopping_app/common/widgets_login_signup/social_buttons.dart';
 import 'package:shopping_app/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:shopping_app/features/authentication/screens/signup/signup.dart';
+import 'package:shopping_app/navigation_menu.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';
@@ -85,7 +86,8 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () =>
+                                  Get.to(() => const NavigationMenu()),
                               child: const Text(TTexts.signIn))),
                       const SizedBox(height: TSizes.spaceBtwInputFields),
                       SizedBox(
