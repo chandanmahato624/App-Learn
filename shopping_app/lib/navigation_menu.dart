@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -27,7 +25,7 @@ class NavigationMenu extends StatelessWidget {
               NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
             ]),
       ),
-      body: controller.screens[controller.selectedIndex.value],
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }
