@@ -18,16 +18,20 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             TPrimaryHeaderContainer(
-                child: Column(
-              children: [
-                /// --- AppBar ---
-                THomeAppBar(),
-                SizedBox(height: TSizes.spaceBtwSections),
+              child: Column(
+                children: [
+                  /// --- AppBar ---
+                  THomeAppBar(),
+                  SizedBox(height: TSizes.spaceBtwSections),
 
-                /// --- SearchBar ---
-                TSearchContainer(text: 'Search in Store'),
-              ],
-            )),
+                  /// --- SearchBar ---
+                  TSearchContainer(text: 'Search in Store'),
+                  SizedBox(height: TSizes.spaceBtwSections),
+
+                  ///Categories sections
+                ],
+              ),
+            ),
           ],
         ),
       ),
