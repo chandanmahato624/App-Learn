@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -53,8 +53,44 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            /// Body -- Tutorial
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: TRoundImage(),
+            )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class TRoundImage extends StatelessWidget {
+  const TRoundImage({
+    super.key,
+  });
+
+  final double? width, height;
+  final String imageUrl;
+  final bool appImageRadius;
+  final BoxBorder? border;
+  final Color backgroundColor;
+  final BoxFit? fit;
+  final EdgeInsetsGeometry? padding;
+  final bool isNetworkImage;
+  final VoidCallback? onpressed;
+
+  /// 7.25
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(TSizes.md),
+        child: const Image(
+            image: AssetImage(TImages.promoBanner1), fit: BoxFit.contain),
       ),
     );
   }
