@@ -73,24 +73,36 @@ class TRoundImage extends StatelessWidget {
 
   final double? width, height;
   final String imageUrl;
-  final bool appImageRadius;
+  final bool applyImageRadius;
   final BoxBorder? border;
   final Color backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
   final bool isNetworkImage;
   final VoidCallback? onpressed;
+  final double borderRedius;
 
-  /// 7.25
+  /// 9.00 -------------- CHECK IT FAST
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(TSizes.md),
-        child: const Image(
-            image: AssetImage(TImages.promoBanner1), fit: BoxFit.contain),
+    return GestureDetector(
+      onTap: onpressed,
+      child: Container(
+        width: width,
+        height: height,
+        padding: padding,
+        decoration: BoxDecoration(
+            border: border,
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(borderRedius)),
+        child: ClipRRect(
+          borderRadius: applyImageRadius
+              ? BorderRadius.circular(borderRedius)
+              : BorderRadius.zero,
+          child: const Image(
+              image: AssetImage(TImages.promoBanner1), fit: BoxFit.contain),
+        ),
       ),
     );
   }
