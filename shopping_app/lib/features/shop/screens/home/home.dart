@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_const
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/primary_header_container.dart';
@@ -58,8 +59,22 @@ class HomeScreen extends StatelessWidget {
             /// Body -- Tutorial
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: TRoundImage(
-                imageUrl: TImages.promoBanner2,
+              child: CarouselSlider(
+                options: CarouselOptions(viewportFraction: 1),
+                items: const [
+                  TRoundImage(
+                    imageUrl: TImages.promoBanner1,
+                  ),
+                  TRoundImage(
+                    imageUrl: TImages.promoBanner2,
+                  ),
+                  TRoundImage(
+                    imageUrl: TImages.promoBanner3,
+                  ),
+                  TRoundImage(
+                    imageUrl: TImages.promoBanner4,
+                  ),
+                ],
               ),
             )
           ],
