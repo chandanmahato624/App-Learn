@@ -57,7 +57,9 @@ class HomeScreen extends StatelessWidget {
             /// Body -- Tutorial
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: TRoundImage(),
+              child: TRoundImage(
+                imageUrl: TImages.promoBanner2,
+              ),
             )
           ],
         ),
@@ -69,6 +71,17 @@ class HomeScreen extends StatelessWidget {
 class TRoundImage extends StatelessWidget {
   const TRoundImage({
     super.key,
+    this.width,
+    this.height,
+    required this.imageUrl,
+    this.applyImageRadius = false,
+    this.border,
+    this.backgroundColor = TColors.light,
+    this.fit = BoxFit.contain,
+    this.padding,
+    this.isNetworkImage = false,
+    this.onpressed,
+    this.borderRedius = TSizes.md,
   });
 
   final double? width, height;
@@ -81,9 +94,6 @@ class TRoundImage extends StatelessWidget {
   final bool isNetworkImage;
   final VoidCallback? onpressed;
   final double borderRedius;
-
-  /// 9.00 -------------- CHECK IT FAST
-  /// Add this after........
 
   @override
   Widget build(BuildContext context) {
@@ -101,8 +111,11 @@ class TRoundImage extends StatelessWidget {
           borderRadius: applyImageRadius
               ? BorderRadius.circular(borderRedius)
               : BorderRadius.zero,
-          child: const Image(
-              image: AssetImage(TImages.promoBanner1), fit: BoxFit.contain),
+          child: Image(
+              fit: fit,
+              image: isNetworkImage
+                  ? NetworkImage(imageUrl)
+                  : AssetImage(imageUrl) as ImageProvider),
         ),
       ),
     );
