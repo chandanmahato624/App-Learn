@@ -5,6 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:shopping_app/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:shopping_app/common/widgets/images/t_rounded_image.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
 import 'package:shopping_app/features/shop/screens/home/home_appbar.dart';
 import 'package:shopping_app/features/shop/screens/home/widget/home_categories.dart';
@@ -62,60 +63,6 @@ class HomeScreen extends StatelessWidget {
               ),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class TRoundImage extends StatelessWidget {
-  const TRoundImage({
-    super.key,
-    this.width,
-    this.height,
-    required this.imageUrl,
-    this.applyImageRadius = false,
-    this.border,
-    this.backgroundColor = TColors.light,
-    this.fit = BoxFit.contain,
-    this.padding,
-    this.isNetworkImage = false,
-    this.onpressed,
-    this.borderRedius = TSizes.md,
-  });
-
-  final double? width, height;
-  final String imageUrl;
-  final bool applyImageRadius;
-  final BoxBorder? border;
-  final Color backgroundColor;
-  final BoxFit? fit;
-  final EdgeInsetsGeometry? padding;
-  final bool isNetworkImage;
-  final VoidCallback? onpressed;
-  final double borderRedius;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onpressed,
-      child: Container(
-        width: width,
-        height: height,
-        padding: padding,
-        decoration: BoxDecoration(
-            border: border,
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(borderRedius)),
-        child: ClipRRect(
-          borderRadius: applyImageRadius
-              ? BorderRadius.circular(borderRedius)
-              : BorderRadius.zero,
-          child: Image(
-              fit: fit,
-              image: isNetworkImage
-                  ? NetworkImage(imageUrl)
-                  : AssetImage(imageUrl) as ImageProvider),
         ),
       ),
     );
