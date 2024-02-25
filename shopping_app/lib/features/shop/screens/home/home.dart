@@ -11,6 +11,7 @@ import 'package:shopping_app/common/widgets/images/t_rounded_image.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
 import 'package:shopping_app/features/shop/screens/home/home_appbar.dart';
 import 'package:shopping_app/features/shop/screens/home/widget/home_categories.dart';
+import 'package:shopping_app/features/shop/screens/home/widget/promo_slider.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -60,36 +61,8 @@ class HomeScreen extends StatelessWidget {
             /// Body -- Tutorial
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Column(
-                children: [
-                  CarouselSlider(
-                    options: CarouselOptions(viewportFraction: 1),
-                    items: const [
-                      TRoundImage(
-                        imageUrl: TImages.promoBanner1,
-                      ),
-                      TRoundImage(
-                        imageUrl: TImages.promoBanner2,
-                      ),
-                      TRoundImage(
-                        imageUrl: TImages.promoBanner3,
-                      ),
-                      TRoundImage(
-                        imageUrl: TImages.promoBanner4,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: TSizes.spaceBtwItems),
-                  Row(
-                    children: [
-                      TCircularContainer(
-                        width: 20,
-                        height: 20,
-                        backgroundColor: Colors.green,
-                      ),
-                    ],
-                  )
-                ],
+              child: TPromoSlider(
+                banners: [TImages.banner1, TImages.banner2, TImages.banner3],
               ),
             )
           ],
