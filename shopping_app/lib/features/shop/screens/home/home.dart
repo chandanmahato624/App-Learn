@@ -3,6 +3,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shopping_app/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:shopping_app/common/widgets/image_text_widgets/vertical_image_text.dart';
@@ -59,21 +60,35 @@ class HomeScreen extends StatelessWidget {
             /// Body -- Tutorial
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: CarouselSlider(
-                options: CarouselOptions(viewportFraction: 1),
-                items: const [
-                  TRoundImage(
-                    imageUrl: TImages.promoBanner1,
+              child: Column(
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(viewportFraction: 1),
+                    items: const [
+                      TRoundImage(
+                        imageUrl: TImages.promoBanner1,
+                      ),
+                      TRoundImage(
+                        imageUrl: TImages.promoBanner2,
+                      ),
+                      TRoundImage(
+                        imageUrl: TImages.promoBanner3,
+                      ),
+                      TRoundImage(
+                        imageUrl: TImages.promoBanner4,
+                      ),
+                    ],
                   ),
-                  TRoundImage(
-                    imageUrl: TImages.promoBanner2,
-                  ),
-                  TRoundImage(
-                    imageUrl: TImages.promoBanner3,
-                  ),
-                  TRoundImage(
-                    imageUrl: TImages.promoBanner4,
-                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  Row(
+                    children: [
+                      TCircularContainer(
+                        width: 20,
+                        height: 20,
+                        backgroundColor: Colors.green,
+                      ),
+                    ],
+                  )
                 ],
               ),
             )
