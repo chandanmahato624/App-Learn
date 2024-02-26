@@ -70,6 +70,8 @@ class HomeScreen extends StatelessWidget {
                       TImages.banner3
                     ],
                   ),
+
+                  /// Popular product ---
                 ],
               ),
             )
