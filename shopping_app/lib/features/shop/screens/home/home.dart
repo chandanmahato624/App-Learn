@@ -70,6 +70,9 @@ class HomeScreen extends StatelessWidget {
                       TImages.banner3
                     ],
                   ),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  )
 
                   /// Popular product ---
                 ],

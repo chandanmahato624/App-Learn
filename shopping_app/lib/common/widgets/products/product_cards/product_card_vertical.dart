@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/common/styles/shadows.dart';
+import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
@@ -10,6 +11,7 @@ class TProductCardVertical extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+
     return Container(
       width: 180,
       padding: const EdgeInsets.all(1),
@@ -20,9 +22,11 @@ class TProductCardVertical extends StatelessWidget {
       ),
       child: Column(
         children: [
-          TRoundedContainer{
-            
-          }
+          TRoundedContainer(
+            height: 100,
+            padding: const EdgeInsets.all(TSizes.sm),
+            backgroundColor: dark ? TColors.dark : TColors.light,
+          )
         ],
       ),
     );
