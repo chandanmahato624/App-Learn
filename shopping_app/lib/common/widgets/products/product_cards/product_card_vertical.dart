@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/common/styles/shadows.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
+import 'package:shopping_app/common/widgets/images/t_rounded_image.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
+import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
 
@@ -23,9 +25,14 @@ class TProductCardVertical extends StatelessWidget {
       child: Column(
         children: [
           TRoundedContainer(
-            height: 100,
+            height: 180,
             padding: const EdgeInsets.all(TSizes.sm),
             backgroundColor: dark ? TColors.dark : TColors.light,
+            child: Stack(
+              children: [
+                TRoundImage(imageUrl: TImages.productImage3),
+              ],
+            ),
           )
         ],
       ),

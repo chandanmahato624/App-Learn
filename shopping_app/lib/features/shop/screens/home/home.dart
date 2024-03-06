@@ -8,6 +8,7 @@ import 'package:shopping_app/common/widgets/custom_shapes/container/primary_head
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:shopping_app/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:shopping_app/common/widgets/images/t_rounded_image.dart';
+import 'package:shopping_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
 import 'package:shopping_app/features/shop/screens/home/home_appbar.dart';
 import 'package:shopping_app/features/shop/screens/home/widget/home_categories.dart';
@@ -72,9 +73,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     height: TSizes.spaceBtwSections,
-                  )
+                  ),
 
                   /// Popular product ---
+                  TProductCardVertical(),
                 ],
               ),
             )
