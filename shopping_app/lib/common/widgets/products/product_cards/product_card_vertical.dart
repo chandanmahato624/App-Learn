@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/styles/shadows.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
+import 'package:shopping_app/common/widgets/icons/t_circular_icon.dart';
 import 'package:shopping_app/common/widgets/images/t_rounded_image.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
@@ -30,7 +32,27 @@ class TProductCardVertical extends StatelessWidget {
             backgroundColor: dark ? TColors.dark : TColors.light,
             child: Stack(
               children: [
-                TRoundImage(imageUrl: TImages.productImage3),
+                const TRoundImage(
+                    imageUrl: TImages.productImage2, applyImageRadius: true),
+
+                /// seal Tag ----
+                Positioned(
+                  top: 12,
+                  child: TRoundedContainer(
+                    radius: TSizes.sm,
+                    backgroundColor: TColors.secondary.withOpacity(0.8),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: TSizes.sm, vertical: TSizes.xs),
+                    child: Text('25%',
+                        style: Theme.of(context)
+                            .textTheme
+                            .labelLarge!
+                            .apply(color: TColors.black)),
+                  ),
+                ),
+
+                /// Favourite icon----------
+                TCircularIcon(icon: Iconsax.heart5, color: Colors.red),
               ],
             ),
           )
