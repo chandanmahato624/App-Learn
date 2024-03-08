@@ -71,12 +71,25 @@ class HomeScreen extends StatelessWidget {
                       TImages.banner3
                     ],
                   ),
-                  SizedBox(
-                    height: TSizes.spaceBtwSections,
+                  SizedBox(height: TSizes.spaceBtwSections),
+
+                  /// Populer products ---
+                  GridView.builder(
+                    itemCount: 4,
+                    shrinkWrap: true,
+                    padding: EdgeInsets.zero,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: TSizes.gridViewSpacing,
+                      crossAxisSpacing: TSizes.gridViewSpacing,
+                      mainAxisExtent: 290,
+                    ),
+                    itemBuilder: (_, index) => const TProductCardVertical(),
                   ),
 
                   /// Popular product ---
-                  TProductCardVertical(),
                 ],
               ),
             )
