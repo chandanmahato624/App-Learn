@@ -88,12 +88,7 @@ class TProductCardVertical extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '\$35.5',
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
+                      TProdutPriceText(),
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
@@ -118,6 +113,22 @@ class TProductCardVertical extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class TProdutPriceText extends StatelessWidget {
+  const TProdutPriceText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      '\$35.5',
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.headlineMedium,
     );
   }
 }
