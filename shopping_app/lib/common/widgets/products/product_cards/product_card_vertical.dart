@@ -86,6 +86,9 @@ class TProductCardVertical extends StatelessWidget {
                           color: TColors.primary, size: TSizes.iconXs),
                     ],
                   ),
+
+                  /// if need any time to design '+' icon button or anything releted to product card then
+                  /// View this video - Flutter eCommerce App UI Design | Flutter Grid View | Flutter Nested Scroll View
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

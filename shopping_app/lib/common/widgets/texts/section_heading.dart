@@ -18,8 +18,9 @@ class TSectionHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Popular categories',
+        Text(title,
             style: Theme.of(context)
                 .textTheme
                 .headlineSmall!
