@@ -7,14 +7,14 @@ import 'package:shopping_app/utils/helpers/helper_functions.dart';
 class TCircularImage extends StatelessWidget {
   const TCircularImage({
     super.key,
-    this.fit,
+    this.fit = BoxFit.cover,
     required this.image,
-    required this.isNetworkImage,
+    this.isNetworkImage = false,
     this.overlayColor,
     this.backgroundColor,
-    required this.width,
-    required this.height,
-    required this.padding,
+    this.width = 56,
+    this.height = 56,
+    this.padding = TSizes.sm,
   });
 
   final BoxFit? fit;
@@ -27,19 +27,24 @@ class TCircularImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 56,
-      height: 56,
-      padding: const EdgeInsets.all(TSizes.sm),
+      width: width,
+      height: height,
+      padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: THelperFunctions.isDarkMode(context)
-            ? TColors.black
-            : TColors.white,
+        color: backgroundColor ??
+            (THelperFunctions.isDarkMode(context)
+                ? TColors.black
+                : TColors.white),
         borderRadius: BorderRadius.circular(100),
       ),
-      child: Image(
-        image: const AssetImage(TImages.clothIcon),
-        color:
-            THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
+      child: Center(
+        child: Image(
+          fit: fit,
+          image: isNetworkImage
+              ? NetworkImage(image)
+              : AssetImage(image) as ImageProvider,
+          color: overlayColor,
+        ),
       ),
     );
   }

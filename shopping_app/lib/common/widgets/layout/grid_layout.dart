@@ -5,7 +5,7 @@ class TRridLayout extends StatelessWidget {
   const TRridLayout({
     super.key,
     required this.itemCount,
-    this.mainAxisExtent = 290,
+    this.mainAxisExtent = 288,
     required this.itemBuilder,
   });
 

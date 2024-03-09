@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
+import 'package:shopping_app/common/widgets/images/t_circular_image.dart';
+import 'package:shopping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shopping_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
+import 'package:shopping_app/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
+import 'package:shopping_app/utils/constants/enums.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
@@ -53,18 +57,50 @@ class Store extends StatelessWidget {
                       TSectionHeading(
                           title: "Featured Brands", onPressed: () {}),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-
-                      TRoundedContainer(
-                        padding: const EdgeInsets.all(TSizes.sm),
-                        showBorder: true,
-                        backgroundColor: Colors.transparent,
-                        child: Row(
-                          children: [
-                            /// -- Icon
-                            TCircularImage(),
-                          ],
-                        ),
-                      )
+                      TRridLayout(
+                          itemCount: 4,
+                          itemBuilder: (_, index) {
+                            return GestureDetector(
+                              onTap: () {},
+                              child: TRoundedContainer(
+                                padding: const EdgeInsets.all(TSizes.sm),
+                                showBorder: true,
+                                backgroundColor: Colors.transparent,
+                                child: Row(
+                                  children: [
+                                    /// -- Icon
+                                    TCircularImage(
+                                      isNetworkImage: false,
+                                      image: TImages.clothIcon,
+                                      backgroundColor: Colors.transparent,
+                                      overlayColor:
+                                          THelperFunctions.isDarkMode(context)
+                                              ? TColors.white
+                                              : TColors.black,
+                                    ),
+                                    const SizedBox(
+                                        height: TSizes.spaceBtwItems / 2),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const TBrandTitleWithVerifiedIcon(
+                                            title: "Nike",
+                                            brandTextSize: TextSizes.large),
+                                        Text(
+                                          '256 Products',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .labelMedium,
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          })
                     ],
                   ),
                 ),
