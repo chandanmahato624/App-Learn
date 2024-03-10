@@ -10,6 +10,7 @@ import 'package:shopping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shopping_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
 import 'package:shopping_app/common/widgets/texts/t_brand_title_with_verified_icon.dart';
+import 'package:shopping_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/enums.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
@@ -86,83 +87,13 @@ class Store extends StatelessWidget {
               ),
             ];
           },
-          body: TabBarView(
+          body: const TabBarView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    /// Brands------
-                    TBrandShowcase(
-                      images: [
-                        TImages.productImage1,
-                        TImages.productImage3,
-                        TImages.productImage2
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    /// Brands------
-                    TBrandShowcase(
-                      images: [
-                        TImages.productImage1,
-                        TImages.productImage3,
-                        TImages.productImage2
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    /// Brands------
-                    TBrandShowcase(
-                      images: [
-                        TImages.productImage1,
-                        TImages.productImage3,
-                        TImages.productImage2
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    /// Brands------
-                    TBrandShowcase(
-                      images: [
-                        TImages.productImage1,
-                        TImages.productImage3,
-                        TImages.productImage2
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    /// Brands------
-                    TBrandShowcase(
-                      images: [
-                        TImages.productImage1,
-                        TImages.productImage3,
-                        TImages.productImage2
-                      ],
-                    )
-                  ],
-                ),
-              ),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
+              TCategoryTab(),
             ],
           ),
         ),
