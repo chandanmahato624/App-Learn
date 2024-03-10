@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
+import 'package:shopping_app/common/widgets/appbar/tabbar.dart';
+import 'package:shopping_app/common/widgets/brands/brand_show_case.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:shopping_app/common/widgets/images/t_circular_image.dart';
+import 'package:shopping_app/common/widgets/layout/brand_card.dart';
 import 'package:shopping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shopping_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
@@ -18,17 +21,20 @@ class Store extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: TAppBar(
-        title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [
-          TCartCounterIcon(
-            onPressed: () {},
-            iconColor: TColors.white,
-          ),
-        ],
-      ),
-      body: NestedScrollView(
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: TAppBar(
+          title:
+              Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [
+            TCartCounterIcon(
+              onPressed: () {},
+              iconColor: TColors.white,
+            ),
+          ],
+        ),
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
@@ -61,59 +67,106 @@ class Store extends StatelessWidget {
                           itemCount: 4,
                           mainAxisExtent: 80,
                           itemBuilder: (_, index) {
-                            return GestureDetector(
-                              onTap: () {},
-                              child: TRoundedContainer(
-                                padding: const EdgeInsets.all(TSizes.sm),
-                                showBorder: true,
-                                backgroundColor: Colors.transparent,
-                                child: Row(
-                                  children: [
-                                    /// -- Icon
-                                    Flexible(
-                                      child: TCircularImage(
-                                        isNetworkImage: false,
-                                        image: TImages.clothIcon,
-                                        backgroundColor: Colors.transparent,
-                                        overlayColor:
-                                            THelperFunctions.isDarkMode(context)
-                                                ? TColors.white
-                                                : TColors.black,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                        height: TSizes.spaceBtwItems / 2),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          const TBrandTitleWithVerifiedIcon(
-                                              title: "Nike",
-                                              brandTextSize: TextSizes.large),
-                                          Text(
-                                            '256 Products',
-                                            overflow: TextOverflow.ellipsis,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .labelMedium,
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            );
+                            return const TBrandCard(showBorder: false);
                           })
                     ],
                   ),
                 ),
+
+                /// Tabs --- Tutorial
+                bottom: const TTabBar(
+                  tabs: [
+                    Tab(child: Text('Sportes')),
+                    Tab(child: Text('Furniture')),
+                    Tab(child: Text('Electronics')),
+                    Tab(child: Text('Clothes')),
+                    Tab(child: Text('Cosmetics')),
+                  ],
+                ),
               ),
             ];
           },
-          body: Container()),
+          body: TabBarView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands------
+                    TBrandShowcase(
+                      images: [
+                        TImages.productImage1,
+                        TImages.productImage3,
+                        TImages.productImage2
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands------
+                    TBrandShowcase(
+                      images: [
+                        TImages.productImage1,
+                        TImages.productImage3,
+                        TImages.productImage2
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands------
+                    TBrandShowcase(
+                      images: [
+                        TImages.productImage1,
+                        TImages.productImage3,
+                        TImages.productImage2
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands------
+                    TBrandShowcase(
+                      images: [
+                        TImages.productImage1,
+                        TImages.productImage3,
+                        TImages.productImage2
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(TSizes.defaultSpace),
+                child: Column(
+                  children: [
+                    /// Brands------
+                    TBrandShowcase(
+                      images: [
+                        TImages.productImage1,
+                        TImages.productImage3,
+                        TImages.productImage2
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -24,7 +24,7 @@ class TRoundedContainer extends StatelessWidget {
   final Color borderColor;
   final Color backgroundColor;
   final EdgeInsetsGeometry? padding;
-  final EdgeInsetsDirectional? margin;
+  final EdgeInsets? margin;
 
   @override
   Widget build(BuildContext context) {
