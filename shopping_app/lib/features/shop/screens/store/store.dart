@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
 import 'package:shopping_app/common/widgets/appbar/tabbar.dart';
-import 'package:shopping_app/common/widgets/brands/brand_show_case.dart';
-import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
-import 'package:shopping_app/common/widgets/images/t_circular_image.dart';
 import 'package:shopping_app/common/widgets/layout/brand_card.dart';
 import 'package:shopping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shopping_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
-import 'package:shopping_app/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:shopping_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
-import 'package:shopping_app/utils/constants/enums.dart';
-import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
 

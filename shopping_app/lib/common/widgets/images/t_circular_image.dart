@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
-import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
 

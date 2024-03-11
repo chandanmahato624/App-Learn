@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:shopping_app/common/styles/spacing_styles.dart';
 import 'package:shopping_app/features/authentication/screens/login/login.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets/images/t_circular_image.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
+import 'package:shopping_app/utils/constants/image_strings.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({

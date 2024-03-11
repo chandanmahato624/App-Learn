@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:get/get.dart";
-import "package:get/get_core/src/get_main.dart";
 import "package:iconsax/iconsax.dart";
 import "package:shopping_app/features/authentication/controllers/onboarding_controller.dart";
 import "package:shopping_app/utils/constants/colors.dart";
@@ -43,13 +42,13 @@ class OnBoardingScreen extends StatelessWidget {
           ),
 
           /// skip button
-          OnBoardingSkip(),
+          const OnBoardingSkip(),
 
           /// SmoothPage indicator
           const OnBoardingNavigation(),
 
           /// CircularButton
-          OnBoardingNextButton()
+          const OnBoardingNextButton()
         ],
       ),
     );
