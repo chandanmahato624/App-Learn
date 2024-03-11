@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
               child: Column(
                 children: [
                   /// --- AppBar ---
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: TSizes.defaultSpace),
                     child: Column(
                       children: [
-                        const TSectionHeading(
+                        TSectionHeading(
                             title: 'Popular categories',
                             showActionButton: false,
                             textColor: Colors.white),
@@ -55,7 +55,8 @@ class HomeScreen extends StatelessWidget {
                         THomeCategories()
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwSections),
                 ],
               ),
             ),
@@ -88,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                   /// Popular product ---
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
