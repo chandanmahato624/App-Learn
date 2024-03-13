@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
 import 'package:shopping_app/common/widgets/images/t_circular_image.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
