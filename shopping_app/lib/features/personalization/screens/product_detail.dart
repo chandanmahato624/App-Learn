@@ -6,6 +6,7 @@ import 'package:shopping_app/common/widgets/custom_shapes/curved_edges/curved_ed
 import 'package:shopping_app/common/widgets/icons/t_circular_icon.dart';
 import 'package:shopping_app/common/widgets/images/t_rounded_image.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/product_details_image_slider.dart';
+import 'package:shopping_app/features/personalization/screens/product_details/product_meta_data.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/ratting_share_widget.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
@@ -35,7 +36,10 @@ class ProductDetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// ratting and share button
-                  TRattingShare()
+                  TRattingShare(),
+
+                  /// price tag + .......
+                  TProductMetaData()
                 ],
               ),
             )
