@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/common/widgets/products/product_cards/product_price_text.dart';
 import 'package:shopping_app/common/widgets/texts/product_title_text.dart';
@@ -62,8 +63,28 @@ class TProductAttributes extends StatelessWidget {
               ),
 
               /// Varition secriptions
+              const TProductTitleText(
+                title:
+                    'This is the descriptions of the product and it can upto 4 line',
+                smallSize: true,
+                maxLines: 4,
+              ),
             ],
           ),
+        ),
+
+        const SizedBox(height: TSizes.spaceBtwItems),
+        Column(
+          children: [
+            const TSectionHeading(title: 'Colors'),
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
+            ChoiceChip(
+              label: const Text('Green'),
+              selected: true,
+              onSelected: (value) {},
+              labelStyle: const TextStyle(color: true ? TColors.white : null),
+            ),
+          ],
         )
       ],
     );
