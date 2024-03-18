@@ -78,12 +78,7 @@ class TProductAttributes extends StatelessWidget {
           children: [
             const TSectionHeading(title: 'Colors'),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-            ChoiceChip(
-              label: const Text('Green'),
-              selected: true,
-              onSelected: (value) {},
-              labelStyle: const TextStyle(color: true ? TColors.white : null),
-            ),
+            TChoiceChip(),
           ],
         )
       ],
