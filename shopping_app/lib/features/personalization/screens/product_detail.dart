@@ -41,7 +41,11 @@ class ProductDetailScreen extends StatelessWidget {
 
                   /// price tag + .......
                   TProductMetaData(),
+
+                  /// Attribute
                   TProductAttributes(),
+
+                  /// Checkout Button
                 ],
               ),
             )

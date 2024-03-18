@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopping_app/common/widgets/chips/choice_chip.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/common/widgets/products/product_cards/product_price_text.dart';
 import 'package:shopping_app/common/widgets/texts/product_title_text.dart';
@@ -75,10 +76,42 @@ class TProductAttributes extends StatelessWidget {
 
         const SizedBox(height: TSizes.spaceBtwItems),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TSectionHeading(title: 'Colors'),
+            const TSectionHeading(
+              title: 'Colors',
+              showActionButton: false,
+            ),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-            TChoiceChip(),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(
+                    text: 'Green', selected: true, onSelected: (value) {}),
+                TChoiceChip(
+                    text: 'Blue', selected: false, onSelected: (value) {}),
+                TChoiceChip(
+                    text: 'Yellow', selected: false, onSelected: (value) {}),
+              ],
+            )
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const TSectionHeading(title: 'Size'),
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
+            Wrap(
+              spacing: 8,
+              children: [
+                TChoiceChip(
+                    text: 'EU 34', selected: true, onSelected: (value) {}),
+                TChoiceChip(
+                    text: 'EU 36', selected: false, onSelected: (value) {}),
+                TChoiceChip(
+                    text: 'EU 38', selected: false, onSelected: (value) {}),
+              ],
+            )
           ],
         )
       ],
