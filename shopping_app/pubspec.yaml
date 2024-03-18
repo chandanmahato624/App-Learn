@@ -27,6 +27,9 @@ dependencies:
   get: ^4.6.6
   flutter_native_splash: ^2.3.6
   smooth_page_indicator: ^1.1.0
+
+  # Product Specific
+  readmore: ^2.1.1
   carousel_slider: ^4.2.1
 
 #----------------PACKAGES END---------------------#

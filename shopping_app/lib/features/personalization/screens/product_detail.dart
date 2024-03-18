@@ -44,8 +44,23 @@ class ProductDetailScreen extends StatelessWidget {
 
                   /// Attribute
                   TProductAttributes(),
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
 
                   /// Checkout Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('CheckOut'),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+
+                  /// Descriptions - 26.28
                 ],
               ),
             )
