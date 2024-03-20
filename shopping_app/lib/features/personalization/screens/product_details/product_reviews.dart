@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
+import 'package:shopping_app/features/personalization/screens/product_details/widget/overall_product_rating.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/widget/progress_indicator_and_rating.dart';
+import 'package:shopping_app/features/personalization/screens/product_details/widget/rating_indicator.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/device/device_utility.dart';
@@ -31,55 +35,16 @@ class ProductReviewsScreen extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwItems),
 
               /// Overall Product Rattings
-              TOverallProductRatting()
+              TOverallProductRatting(),
+              TRatingBarIndicator(
+                rating: 3.5,
+              ),
+              Text("12,611", style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: TSizes.spaceBtwSections),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class TOverallProductRatting extends StatelessWidget {
-  const TOverallProductRatting({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-            flex: 3,
-            child:
-                Text('4.8', style: Theme.of(context).textTheme.displayLarge)),
-        const Expanded(
-            flex: 7,
-            child: Column(
-              children: [
-                TRatingProgressIndicator(
-                  text: '5',
-                  value: 1.0,
-                ),
-                TRatingProgressIndicator(
-                  text: '4',
-                  value: 0.8,
-                ),
-                TRatingProgressIndicator(
-                  text: '3',
-                  value: 0.6,
-                ),
-                TRatingProgressIndicator(
-                  text: '2',
-                  value: 0.4,
-                ),
-                TRatingProgressIndicator(
-                  text: '1',
-                  value: 0.2,
-                ),
-              ],
-            ))
-      ],
     );
   }
 }
