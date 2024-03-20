@@ -5,6 +5,7 @@ import 'package:shopping_app/common/widgets/appbar/appbar.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/widget/overall_product_rating.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/widget/progress_indicator_and_rating.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/widget/rating_indicator.dart';
+import 'package:shopping_app/features/personalization/screens/product_details/widget/user_review_card.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/device/device_utility.dart';
@@ -41,6 +42,7 @@ class ProductReviewsScreen extends StatelessWidget {
               ),
               Text("12,611", style: Theme.of(context).textTheme.bodySmall),
               const SizedBox(height: TSizes.spaceBtwSections),
+              UserReviewCard(),
             ],
           ),
         ),
