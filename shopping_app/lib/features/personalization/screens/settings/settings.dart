@@ -7,6 +7,7 @@ import 'package:shopping_app/common/widgets/custom_shapes/container/primary_head
 import 'package:shopping_app/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:shopping_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
+import 'package:shopping_app/features/personalization/screens/address/address.dart';
 import 'package:shopping_app/features/personalization/screens/profile/widgets/profile.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -55,11 +56,11 @@ class SettingsScreen extends StatelessWidget {
                     subTitle: 'Set Shopping delivary address',
                     //onTap: () {},
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.shopping_cart,
                     title: 'My Cart',
                     subTitle: 'Add, remove products and move to checkout',
-                    // onTap: () {},
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.bag_tick,
