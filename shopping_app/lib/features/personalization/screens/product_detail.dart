@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
@@ -11,6 +13,7 @@ import 'package:shopping_app/features/personalization/screens/product_details/bo
 import 'package:shopping_app/features/personalization/screens/product_details/product_attributes.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/product_details_image_slider.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/product_meta_data.dart';
+import 'package:shopping_app/features/personalization/screens/product_details/product_reviews.dart';
 import 'package:shopping_app/features/personalization/screens/product_details/ratting_share_widget.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
@@ -91,7 +94,8 @@ class ProductDetailScreen extends StatelessWidget {
                         showActionButton: false,
                       ),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              Get.to(() => const ProductReviewsScreen()),
                           icon: const Icon(
                             Iconsax.arrow_right_3,
                             size: 18,
