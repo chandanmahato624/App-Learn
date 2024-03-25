@@ -70,6 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '6157017212',
     projectId: 'e-shopping-app-1ddd8',
     storageBucket: 'e-shopping-app-1ddd8.appspot.com',
+    androidClientId: '6157017212-9jn4gt8cn2suefsupi7glk82b306qini.apps.googleusercontent.com',
+    iosClientId: '6157017212-40kr5323v2vcvbuj0tcmrj8j6i2a4jb5.apps.googleusercontent.com',
     iosBundleId: 'com.example.shoppingApp',
   );
 }
