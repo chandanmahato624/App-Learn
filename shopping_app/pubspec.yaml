@@ -32,6 +32,7 @@ dependencies:
   readmore: ^2.1.1
   carousel_slider: ^4.2.1
   flutter_rating_bar: ^4.0.1
+  firebase_core: ^2.27.0
 
 #----------------PACKAGES END---------------------#
 dev_dependencies:
