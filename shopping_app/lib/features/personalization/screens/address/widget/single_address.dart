@@ -50,7 +50,8 @@ class TSingleAddress extends StatelessWidget {
               const SizedBox(height: TSizes.sm / 2),
               const Text('+91 8016219728',
                   maxLines: 1, overflow: TextOverflow.ellipsis),
-              const Text('82356 Tinmy coves, South Liana, Maine, 87665, USA',
+              const Text(
+                  '82356 Shivmandir, Siliguri, West Bengal, 734001, India',
                   softWrap: true),
             ],
           )

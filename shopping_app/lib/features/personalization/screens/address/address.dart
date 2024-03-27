@@ -31,6 +31,9 @@ class UserAddressScreen extends StatelessWidget {
             children: [
               TSingleAddress(selectedAddress: false),
               TSingleAddress(selectedAddress: true),
+              TSingleAddress(selectedAddress: false),
+              TSingleAddress(selectedAddress: false),
+              TSingleAddress(selectedAddress: false),
             ],
           ),
         ),
