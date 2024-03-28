@@ -7,6 +7,7 @@ import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
+import 'package:shopping_app/utils/validators/validation.dart';
 
 class TSignUpFrom extends StatelessWidget {
   const TSignUpFrom({
@@ -26,6 +27,8 @@ class TSignUpFrom extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.firstName,
+                  validator: (value) =>
+                      TValidator.validateEmptyText('First name', value),
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.firstName,
@@ -36,6 +39,8 @@ class TSignUpFrom extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.lastName,
+                  validator: (value) =>
+                      TValidator.validateEmptyText('Last name', value),
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.lastName,
@@ -49,6 +54,8 @@ class TSignUpFrom extends StatelessWidget {
           /// User Name
           TextFormField(
             controller: controller.userName,
+            validator: (value) =>
+                TValidator.validateEmptyText('Username', value),
             expands: false,
             decoration: const InputDecoration(
                 labelText: TTexts.username,
@@ -59,6 +66,7 @@ class TSignUpFrom extends StatelessWidget {
           /// Email
           TextFormField(
             controller: controller.email,
+            validator: (value) => TValidator.validateEmail(value),
             decoration: const InputDecoration(
                 labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
           ),
@@ -67,6 +75,7 @@ class TSignUpFrom extends StatelessWidget {
           /// Phone number
           TextFormField(
             controller: controller.phoneNumber,
+            validator: (value) => TValidator.validatePhoneNumber(value),
             decoration: const InputDecoration(
                 labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
           ),
@@ -75,6 +84,7 @@ class TSignUpFrom extends StatelessWidget {
           /// Password
           TextFormField(
             controller: controller.password,
+            validator: (value) => TValidator.validatePassword(value),
             obscureText: true,
             decoration: const InputDecoration(
               labelText: TTexts.password,
@@ -128,7 +138,7 @@ class TSignUpFrom extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => Get.to(() => const VerifyEmailScreen()),
+              onPressed: () => controller.singup(),
               child: const Text(TTexts.createAccount),
             ),
           ),
