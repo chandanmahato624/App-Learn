@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:shopping_app/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:shopping_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -15,13 +16,16 @@ class TSignUpFrom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final controller = Get.put(SingUpController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
         children: [
           Row(
             children: [
               Expanded(
                 child: TextFormField(
+                  controller: controller.firstName,
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.firstName,
@@ -31,6 +35,7 @@ class TSignUpFrom extends StatelessWidget {
               const SizedBox(width: TSizes.spaceBtwInputFields),
               Expanded(
                 child: TextFormField(
+                  controller: controller.lastName,
                   expands: false,
                   decoration: const InputDecoration(
                       labelText: TTexts.lastName,
@@ -43,6 +48,7 @@ class TSignUpFrom extends StatelessWidget {
 
           /// User Name
           TextFormField(
+            controller: controller.userName,
             expands: false,
             decoration: const InputDecoration(
                 labelText: TTexts.username,
@@ -52,6 +58,7 @@ class TSignUpFrom extends StatelessWidget {
 
           /// Email
           TextFormField(
+            controller: controller.email,
             decoration: const InputDecoration(
                 labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
           ),
@@ -59,6 +66,7 @@ class TSignUpFrom extends StatelessWidget {
 
           /// Phone number
           TextFormField(
+            controller: controller.phoneNumber,
             decoration: const InputDecoration(
                 labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
           ),
@@ -66,6 +74,7 @@ class TSignUpFrom extends StatelessWidget {
 
           /// Password
           TextFormField(
+            controller: controller.password,
             obscureText: true,
             decoration: const InputDecoration(
               labelText: TTexts.password,
