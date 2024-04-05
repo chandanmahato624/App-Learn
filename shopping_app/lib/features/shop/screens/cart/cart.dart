@@ -8,6 +8,7 @@ import 'package:shopping_app/common/widgets/products/product_cards/product_price
 import 'package:shopping_app/common/widgets/texts/product_title_text.dart';
 import 'package:shopping_app/common/widgets/texts/t_brand_title_with_verified_icon.dart';
 import 'package:shopping_app/features/shop/screens/cart/cart_item.dart';
+import 'package:shopping_app/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -23,32 +24,11 @@ class CartScreen extends StatelessWidget {
         showBackArrow: true,
         title: Text('Cart', style: Theme.of(context).textTheme.headlineSmall),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: ListView.separated(
-          itemCount: 10,
-          shrinkWrap: true,
-          separatorBuilder: (_, __) =>
-              const SizedBox(height: TSizes.spaceBtwSections),
-          itemBuilder: (_, index) => const Column(
-            children: [
-              TCartItem(),
-              SizedBox(height: TSizes.spaceBtwItems),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      SizedBox(width: 70),
-                      TProductQuantityWithAddRemoveButton()
-                    ],
-                  ),
-                  TProdutPriceText(price: '624')
-                ],
-              )
-            ],
-          ),
-        ),
+      body: const Padding(
+        padding: EdgeInsets.all(TSizes.defaultSpace),
+
+        /// item in cart
+        child: TCartItems(),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
