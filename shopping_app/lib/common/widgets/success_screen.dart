@@ -8,7 +8,15 @@ import 'package:shopping_app/utils/constants/text_strings.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  const SuccessScreen(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.subtitle,
+      required this.onPressed});
+
+  final String image, title, subtitle;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,7 @@ class SuccessScreen extends StatelessWidget {
           padding: TSpacingStyle.paddingWithAppBerHeight * 2,
           child: Column(children: [
             Image(
-              image: const AssetImage(TImages.staticSuccessIllustration),
+              image: AssetImage(image),
               width: THelperFunctions.screenWidth() * 0.6,
             ),
             const SizedBox(
@@ -27,22 +35,17 @@ class SuccessScreen extends StatelessWidget {
 
             ///Title and subtitle
             Text(
-              TTexts.yourAccountCreatedTitle,
+              title,
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
             Text(
-              'mail.chandanmahato@gmail.com',
+              subtitle,
               style: Theme.of(context).textTheme.labelLarge,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: TSizes.spaceBtwItems),
-            Text(
-              TTexts.yourAccountCreatedSubTitle,
-              style: Theme.of(context).textTheme.labelMedium,
-              textAlign: TextAlign.center,
-            ),
+
             const SizedBox(height: TSizes.spaceBtwSections),
 
             ///Button

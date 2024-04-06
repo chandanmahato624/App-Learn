@@ -15,7 +15,7 @@ class TCartItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: 10,
+      itemCount: 3,
       shrinkWrap: true,
       separatorBuilder: (_, __) =>
           const SizedBox(height: TSizes.spaceBtwSections),

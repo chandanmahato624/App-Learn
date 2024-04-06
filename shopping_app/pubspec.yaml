@@ -60,6 +60,7 @@ flutter:
     - assets/images/reviews/
     - assets/icons/categories/
     - assets/images/products/
+    - assets/icons/payment_methods/
     - assets/images/banners/
 
  #----------------LOCAL ASSETS---------------------#
