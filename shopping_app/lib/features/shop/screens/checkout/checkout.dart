@@ -7,6 +7,7 @@ import 'package:shopping_app/common/widgets/products/cart/coupon_widget.dart';
 import 'package:shopping_app/common/widgets/success_screen.dart';
 import 'package:shopping_app/features/shop/screens/cart/widgets/cart_items.dart';
 import 'package:shopping_app/features/shop/screens/checkout/widgets/billing_address_section.dart';
+import 'package:shopping_app/features/shop/screens/checkout/widgets/billing_amount_section.dart';
 import 'package:shopping_app/features/shop/screens/checkout/widgets/billing_payment_section.dart';
 import 'package:shopping_app/navigation_menu.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
@@ -56,6 +57,10 @@ class CheckoutScreen extends StatelessWidget {
 
                     /// - Payment method
                     TBillingAddressSection(),
+                    const SizedBox(height: TSizes.spaceBtwItems),
+
+                    /// - Billing Address
+                    TBillingAmountSection(),
                     const SizedBox(height: TSizes.spaceBtwItems),
                   ],
                 ),

@@ -25,7 +25,7 @@ class TBillingAmountSection extends StatelessWidget {
         const SizedBox(height: TSizes.spaceBtwItems / 2),
         Row(
           children: [
-            const Icon(Icons.phone, color: Colors.grey, size: 16),
+            const Icon(Icons.location_city, color: Colors.grey, size: 16),
             const SizedBox(width: TSizes.spaceBtwItems),
             Text('Siliguri, Darjeeling',
                 style: Theme.of(context).textTheme.bodyMedium),
