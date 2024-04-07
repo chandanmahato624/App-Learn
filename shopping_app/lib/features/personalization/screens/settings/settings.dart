@@ -9,6 +9,7 @@ import 'package:shopping_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
 import 'package:shopping_app/features/personalization/screens/address/address.dart';
 import 'package:shopping_app/features/personalization/screens/profile/widgets/profile.dart';
+import 'package:shopping_app/features/shop/screens/order/order.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 
@@ -62,11 +63,11 @@ class SettingsScreen extends StatelessWidget {
                     subTitle: 'Add, remove products and move to checkout',
                     onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-Progress and complete orders',
-                    //onTap: () {},
+                    onTap: () => Get.to(const OrderScreen()),
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.bank,
