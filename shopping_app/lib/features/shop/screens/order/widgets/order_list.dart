@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
@@ -15,7 +13,7 @@ class TOrderListItems extends StatelessWidget {
     final dark = THelperFunctions.isDarkMode(context);
     return ListView.separated(
       shrinkWrap: true,
-      itemCount: 5,
+      itemCount: 15,
       separatorBuilder: (_, __) => const SizedBox(height: TSizes.spaceBtwItems),
       itemBuilder: (_, index) => TRoundedContainer(
         showBorder: true,
