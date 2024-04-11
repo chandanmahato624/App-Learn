@@ -1,11 +1,14 @@
 // ignore_for_file: unnecessary_const
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:shopping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shopping_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
+import 'package:shopping_app/features/shop/screens/all_products/all_products.dart';
 import 'package:shopping_app/features/shop/screens/home/home_appbar.dart';
 import 'package:shopping_app/features/shop/screens/home/widget/home_categories.dart';
 import 'package:shopping_app/features/shop/screens/home/widget/promo_slider.dart';
@@ -69,7 +72,7 @@ class HomeScreen extends StatelessWidget {
 
                   TSectionHeading(
                     title: 'Popular Products',
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProducts()),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
