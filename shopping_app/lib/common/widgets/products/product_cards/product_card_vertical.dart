@@ -83,10 +83,17 @@ class TProductCardVertical extends StatelessWidget {
 
                   /// if need any time to design '+' icon button or anything releted to product card then
                   /// View this video - Flutter eCommerce App UI Design | Flutter Grid View | Flutter Nested Scroll View
+
+                  //Price row
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TProdutPriceText(price: '35.0'),
+                      const Padding(
+                        padding: EdgeInsets.only(left: TSizes.sm),
+                        child: TProdutPriceText(price: '35.0'),
+                      ),
+
+                      // Add to cart buton
                       Container(
                         decoration: const BoxDecoration(
                           color: TColors.dark,
@@ -102,7 +109,7 @@ class TProductCardVertical extends StatelessWidget {
                           child: Center(
                               child: Icon(Iconsax.add, color: TColors.white)),
                         ),
-                      )
+                      ),
                     ],
                   )
                 ],
