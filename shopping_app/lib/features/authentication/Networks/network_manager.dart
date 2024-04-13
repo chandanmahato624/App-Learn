@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
+import 'package:shopping_app/utils/popups/loaders.dart';
 
 // import '../popups/loaders.dart';
 
@@ -29,7 +30,7 @@ class NetworkManager extends GetxController {
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {
     _connectionStatus.value = result;
     if (_connectionStatus.value == ConnectivityResult.none) {
-      //TLoaders.warningSnackBar(title: 'No Internet Connection'); ----> Hide this features due to missing file
+      Tloaders.warningSnackBar(title: 'No Internet Connection');
     }
   }
 

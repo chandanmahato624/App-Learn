@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:shopping_app/features/authentication/Networks/network_manager.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/popups/full_screen_loader.dart';
+import 'package:shopping_app/utils/popups/loaders.dart';
 
 class SingUpController extends GetxController {
   static SingUpController get instance => Get.find();
@@ -37,8 +38,9 @@ class SingUpController extends GetxController {
       }
     } catch (e) {
       // ---------------------18.30
-      // Tloders.errorSnackbar(title: 'On Snap!', message: e.toString());
+      Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
     } finally {
+      // Remove loder
       TFullScreenLoader.stopLoading();
     }
   }
