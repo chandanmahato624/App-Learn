@@ -26,7 +26,7 @@ class SingUpController extends GetxController {
           'We are processing your information...', TImages.verifyIllustration);
       // check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      if (isConnected) {
+      if (!isConnected) {
         TFullScreenLoader.stopLoading();
         return;
       }

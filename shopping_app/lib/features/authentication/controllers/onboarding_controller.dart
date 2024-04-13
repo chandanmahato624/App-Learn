@@ -15,11 +15,13 @@ class OnBoardingController extends GetxController {
   /// Update Current Index when page Scroll
   void updatePageIndicator(index) => currentPageIndex.value = index;
 
+  /// jump to specific dot selected page
   void dotNavigationClick(index) {
     currentPageIndex.value = index;
     pageController.jumpTo(index);
   }
 
+  /// update current index and jump to the next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
       final storage = GetStorage();

@@ -4,13 +4,14 @@ import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 
 class TAnimationLoaderWidget extends StatelessWidget {
-  const TAnimationLoaderWidget(
-      {super.key,
-      required this.text,
-      required this.animation,
-      this.showAction = false,
-      this.actionText,
-      this.onActionPressed});
+  const TAnimationLoaderWidget({
+    super.key,
+    required this.text,
+    required this.animation,
+    this.showAction = false,
+    this.actionText,
+    this.onActionPressed,
+  });
 
   final String text;
   final String animation;
