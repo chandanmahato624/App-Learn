@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:shopping_app/common/widgets/appbar/appbar.dart';
 import 'package:shopping_app/common/widgets/appbar/tabbar.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/search_container.dart';
@@ -6,6 +8,7 @@ import 'package:shopping_app/common/widgets/layout/brand_card.dart';
 import 'package:shopping_app/common/widgets/layout/grid_layout.dart';
 import 'package:shopping_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
+import 'package:shopping_app/features/shop/screens/brand/all_brands.dart';
 import 'package:shopping_app/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -56,7 +59,9 @@ class Store extends StatelessWidget {
 
                       /// -- Featured Brands
                       TSectionHeading(
-                          title: "Featured Brands", onPressed: () {}),
+                          title: "Featured Brands",
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen())),
                       const SizedBox(height: TSizes.spaceBtwItems / 1.5),
                       TRridLayout(
                           itemCount: 4,

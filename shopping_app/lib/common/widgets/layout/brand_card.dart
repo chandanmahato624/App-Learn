@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:shopping_app/common/widgets/custom_shapes/container/rounded_container.dart';
 import 'package:shopping_app/common/widgets/images/t_circular_image.dart';
 import 'package:shopping_app/common/widgets/texts/t_brand_title_with_verified_icon.dart';
@@ -11,14 +12,16 @@ import 'package:shopping_app/utils/helpers/helper_functions.dart';
 class TBrandCard extends StatelessWidget {
   const TBrandCard({
     super.key,
+    this.onTap,
     required this.showBorder,
   });
 
   final bool showBorder;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: TRoundedContainer(
         padding: const EdgeInsets.all(TSizes.sm),
         showBorder: showBorder,
