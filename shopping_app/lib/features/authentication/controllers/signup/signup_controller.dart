@@ -9,6 +9,7 @@ class SingUpController extends GetxController {
   static SingUpController get instance => Get.find();
 
   /// Variable
+  final hidePassword = true.obs;
   final email = TextEditingController();
   final lastName = TextEditingController();
   final userName = TextEditingController();
@@ -27,15 +28,9 @@ class SingUpController extends GetxController {
           'We are processing your information...', TImages.verifyIllustration);
       // check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) {
-        TFullScreenLoader.stopLoading();
-        return;
-      }
+      if (!isConnected) return;
       // Form validation
-      if (!signupFormKey.currentState!.validate()) {
-        TFullScreenLoader.stopLoading();
-        return;
-      }
+      if (!signupFormKey.currentState!.validate()) return;
     } catch (e) {
       // ---------------------18.30
       Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
