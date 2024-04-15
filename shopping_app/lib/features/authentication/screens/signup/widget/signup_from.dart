@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:shopping_app/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:shopping_app/features/authentication/screens/signup/verify_email.dart';
+import 'package:shopping_app/features/authentication/screens/signup/widget/terms_and_conditions_checkbox.dart';
 import 'package:shopping_app/utils/constants/colors.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
 import 'package:shopping_app/utils/constants/text_strings.dart';
@@ -103,43 +104,7 @@ class TSignUpFrom extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           /// Terms and condition
-          Row(
-            children: [
-              SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: Checkbox(value: true, onChanged: (value) {})),
-              const SizedBox(width: TSizes.spaceBtwItems),
-              Text.rich(TextSpan(children: [
-                TextSpan(
-                    text: '${TTexts.iAgreeTo} ',
-                    style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(
-                    text: TTexts.privacyPolicy,
-                    style: Theme.of(context).textTheme.bodyMedium!.apply(
-                          color: dark ? TColors.white : TColors.primary,
-                          decoration: TextDecoration.underline,
-                          decorationColor:
-                              dark ? TColors.white : TColors.primary,
-                        )),
-                // TextSpan(
-                //     text: '${TTexts.and} ',
-                //     style: Theme.of(context).textTheme.bodySmall),
-                // TextSpan(
-                //     text: TTexts.termsOfUse,
-                //     style: Theme.of(context)
-                //         .textTheme
-                //         .bodyMedium!
-                //         .apply(
-                //           color:
-                //               dark ? TColors.white : TColors.primary,
-                //           decoration: TextDecoration.underline,
-                //           decorationColor:
-                //               dark ? TColors.white : TColors.primary,
-                //         )),
-              ])),
-            ],
-          ),
+          const TTermsAndConditions(),
           const SizedBox(height: TSizes.spaceBtwSections),
 
           /// SignUpButton

@@ -10,6 +10,7 @@ class SingUpController extends GetxController {
 
   /// Variable
   final hidePassword = true.obs;
+  final privacyPolicy = true.obs;
   final email = TextEditingController();
   final lastName = TextEditingController();
   final userName = TextEditingController();
@@ -29,14 +30,26 @@ class SingUpController extends GetxController {
       // check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) return;
+
       // Form validation
       if (!signupFormKey.currentState!.validate()) return;
+
+      // Privacy Policy check
+      if (!privacyPolicy.value) {
+        Tloaders.warningSnackBar(
+          title: 'Accept Privacy Policy',
+          message:
+              'In order to create account, you must have to read and accept the aprivacy Policy & Terms of Use',
+        );
+        return;
+      }
     } catch (e) {
-      // ---------------------18.30
       Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
     } finally {
       // Remove loder
       TFullScreenLoader.stopLoading();
     }
   }
+
+  //----------28.32
 }
