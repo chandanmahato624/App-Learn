@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shopping_app/common/styles/spacing_styles.dart';
 import 'package:shopping_app/features/authentication/screens/login/login.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
@@ -25,10 +26,7 @@ class SuccessScreen extends StatelessWidget {
         child: Padding(
           padding: TSpacingStyle.paddingWithAppBerHeight * 2,
           child: Column(children: [
-            Image(
-              image: AssetImage(image),
-              width: THelperFunctions.screenWidth() * 0.6,
-            ),
+            Lottie.asset(image, width: MediaQuery.of(context).size.width * 0.6),
             const SizedBox(
               height: TSizes.spaceBtwSections,
             ),
@@ -52,7 +50,7 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const LoginScreen()),
+                onPressed: onPressed,
                 child: const Text(TTexts.tContinue),
               ),
             ),

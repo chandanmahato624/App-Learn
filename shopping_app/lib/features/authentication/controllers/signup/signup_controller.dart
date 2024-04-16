@@ -86,14 +86,11 @@ class SingUpController extends GetxController {
           message: 'Your account has been created! verify email to continew.');
 
       // Move to verify Email Screen
-      Get.to(() => const VerifyEmailScreen());
+      Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       // remove loader
       TFullScreenLoader.stopLoading();
       Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
-    } finally {
-      // Remove loder
-      TFullScreenLoader.stopLoading();
     }
   }
 

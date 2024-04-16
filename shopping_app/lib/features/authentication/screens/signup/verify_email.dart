@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shopping_app/common/widgets/success_screen.dart';
+import 'package:shopping_app/data/repositories/authentication_repo.dart';
+import 'package:shopping_app/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:shopping_app/features/authentication/screens/login/login.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/constants/sizes.dart';
@@ -9,16 +11,19 @@ import 'package:shopping_app/utils/constants/text_strings.dart';
 import 'package:shopping_app/utils/helpers/helper_functions.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+  const VerifyEmailScreen({super.key, this.email});
+
+  final String? email;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-              onPressed: () => Get.offAll(() => const LoginScreen()),
+              onPressed: () => AuthenticationRepository.instance.logout(),
               icon: const Icon(CupertinoIcons.clear))
         ],
       ),
@@ -44,7 +49,7 @@ class VerifyEmailScreen extends StatelessWidget {
               ),
               const SizedBox(height: TSizes.spaceBtwItems),
               Text(
-                'mail.chandanmahato@gmail.com',
+                email ?? '',
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -60,12 +65,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => SuccessScreen(
-                        image: TImages.staticSuccessIllustration,
-                        title: TTexts.yourAccountCreatedTitle,
-                        subtitle: 'mail.chandanmahato@gmail.com',
-                        onPressed: () {},
-                      )),
+                  onPressed: () => controller.checkEmailVerificationStatus(),
                   child: const Text(TTexts.tContinue),
                 ),
               ),
@@ -73,7 +73,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => controller.sendEmailVerification(),
                   child: const Text(TTexts.resendEmail),
                 ),
               ),
