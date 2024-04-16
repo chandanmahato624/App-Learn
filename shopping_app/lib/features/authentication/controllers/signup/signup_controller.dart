@@ -1,6 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:shopping_app/data/repositories/authentication_repo.dart';
+import 'package:shopping_app/data/repositories/user/user_model.dart';
+import 'package:shopping_app/data/repositories/user/user_repository.dart';
 import 'package:shopping_app/features/authentication/Networks/network_manager.dart';
+import 'package:shopping_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/popups/full_screen_loader.dart';
 import 'package:shopping_app/utils/popups/loaders.dart';
@@ -22,7 +27,7 @@ class SingUpController extends GetxController {
   /// SIGNUP
 
   /// SIGNUP
-  Future<void> singup() async {
+  void singup() async {
     try {
       //Start loading
       TFullScreenLoader.openLoadingDialog(
@@ -30,10 +35,18 @@ class SingUpController extends GetxController {
 
       // check internet connectivity
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) {
+        // Remove loder
+        TFullScreenLoader.stopLoading();
+        return;
+      }
 
       // Form validation
-      if (!signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) {
+        // Remove loder
+        TFullScreenLoader.stopLoading();
+        return;
+      }
 
       // Privacy Policy check
       if (!privacyPolicy.value) {
@@ -44,7 +57,39 @@ class SingUpController extends GetxController {
         );
         return;
       }
+
+      // Register user in firebase Authentication and save user data in firebase
+      final userCredential = await AuthenticationRepository.instance
+          .registerWithEmailAndPassword(
+              email.text.trim(), password.text.trim());
+
+      // Save Authenticated user data in the firebase firestore-----
+      final newUser = UserModel(
+        id: userCredential.user!.uid,
+        firstName: firstName.text.trim(),
+        lastName: lastName.text.trim(),
+        username: userName.text.trim(),
+        email: email.text.trim(),
+        phoneNumber: phoneNumber.text.trim(),
+        profilePicture: '',
+      );
+
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserRecord(newUser);
+
+      // Remove loder
+      TFullScreenLoader.stopLoading();
+
+      // show sucess message
+      Tloaders.successSnackBar(
+          title: 'congertulation',
+          message: 'Your account has been created! verify email to continew.');
+
+      // Move to verify Email Screen
+      Get.to(() => const VerifyEmailScreen());
     } catch (e) {
+      // remove loader
+      TFullScreenLoader.stopLoading();
       Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
     } finally {
       // Remove loder
