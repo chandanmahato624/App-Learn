@@ -61,4 +61,9 @@ class AuthenticationRepository extends GetxController {
 
     /// chandan: any time we can add more Exception Handilaing 31.07 :)
   }
+
+  /// Email verification
+  Future<void> sendEmailVerification() async {
+    // 5.48
+  }
 }
