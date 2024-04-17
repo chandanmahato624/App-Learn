@@ -46,7 +46,11 @@ class TImages {
   static const String productsIllustration =
       "assets/images/animations/sammy-line-workout.gif";
   static const String lodingIllustration =
-      "assets/images/animations/lodingani.json";
+      "assets/images/animations/working-elephant.json";
+  static const String successIllustration =
+      "assets/images/animations/success-right.json";
+  static const String mailsendIllustration =
+      "assets/images/animations/mail-send.json";
   static const String productsSaleIllustration =
       "assets/images/animations/sammy-line-sale.png";
   static const String staticSuccessIllustration =

@@ -55,6 +55,8 @@ class SingUpController extends GetxController {
           message:
               'In order to create account, you must have to read and accept the aprivacy Policy & Terms of Use',
         );
+        // Remove loder
+        TFullScreenLoader.stopLoading();
         return;
       }
 
