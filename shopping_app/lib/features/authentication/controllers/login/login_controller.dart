@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -63,6 +64,28 @@ class LoginController extends GetxController {
     } catch (e) {
       // remove loader
       TFullScreenLoader.stopLoading();
+      Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
+    }
+  }
+
+  /// Google signin authentication
+  Future<void> googleSignIn() async {
+    try {
+      // Start loading
+      TFullScreenLoader.openLoadingDialog(
+          "Loging yoy in", TImages.lodingIllustration);
+      // check internet connectivity
+      final isConnected = await NetworkManager.instance.isConnected();
+      if (!isConnected) {
+        // Remove loder
+        TFullScreenLoader.stopLoading();
+        return;
+      }
+
+      // Google authentication
+      final userCredentials =
+          await AuthenticationRepository.instance.signInWithGoogle();
+    } catch (e) {
       Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
     }
   }
