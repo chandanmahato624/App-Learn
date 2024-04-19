@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:iconsax/iconsax.dart';
@@ -7,6 +8,7 @@ import 'package:shopping_app/common/widgets/custom_shapes/container/primary_head
 import 'package:shopping_app/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:shopping_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:shopping_app/common/widgets/texts/section_heading.dart';
+import 'package:shopping_app/data/repositories/authentication_repo.dart';
 import 'package:shopping_app/features/personalization/screens/address/address.dart';
 import 'package:shopping_app/features/personalization/screens/profile/widgets/profile.dart';
 import 'package:shopping_app/features/shop/screens/order/order.dart';
@@ -18,6 +20,7 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(AuthenticationRepository());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -128,7 +131,8 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () => controller.logout(),
+                        child: const Text('Logout')),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                 ],

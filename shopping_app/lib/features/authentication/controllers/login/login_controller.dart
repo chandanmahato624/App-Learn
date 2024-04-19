@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shopping_app/data/repositories/authentication_repo.dart';
 import 'package:shopping_app/features/authentication/Networks/network_manager.dart';
+import 'package:shopping_app/features/personalization/controllers/user_controller.dart';
 import 'package:shopping_app/utils/constants/image_strings.dart';
 import 'package:shopping_app/utils/popups/full_screen_loader.dart';
 import 'package:shopping_app/utils/popups/loaders.dart';
@@ -16,6 +17,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -85,7 +87,18 @@ class LoginController extends GetxController {
       // Google authentication
       final userCredentials =
           await AuthenticationRepository.instance.signInWithGoogle();
+
+      // Savee user record
+      await userController.saveUserRecord(userCredentials);
+
+      // Remove loder
+      TFullScreenLoader.stopLoading();
+
+      // Redirect
+      AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
+      // Remove loder
+      TFullScreenLoader.stopLoading();
       Tloaders.errorSnackBar(title: 'On Snap!', message: e.toString());
     }
   }

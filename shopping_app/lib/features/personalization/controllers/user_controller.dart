@@ -1,12 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:shopping_app/data/repositories/user/user_model.dart';
+import 'package:shopping_app/data/repositories/user/user_repository.dart';
 import 'package:shopping_app/utils/popups/loaders.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
 
-  /// Solve userr record from any resgistration provider
+  final userRepository = Get.put(UserRepository());
+
+  /// Save userr record from any resgistration provider
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
       if (userCredentials != null) {
@@ -26,6 +29,9 @@ class UserController extends GetxController {
             email: userCredentials.user!.email ?? '',
             phoneNumber: userCredentials.user!.phoneNumber ?? '',
             profilePicture: userCredentials.user!.photoURL ?? '');
+
+        // Save user data
+        await userRepository.saveUserRecord(user);
       }
     } catch (e) {
       Tloaders.warningSnackBar(
