@@ -24,6 +24,9 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
+  /// Aithenticate user daat
+  User? get authUser => _auth.currentUser;
+
   /// Called from main.dart
   @override
   void onReady() {
